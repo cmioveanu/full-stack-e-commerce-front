@@ -1,4 +1,6 @@
 header {
+    display: flex;
+    align-items: center;
     width: 100%;
     padding: 0 2.5%;
     box-sizing: border-box;
@@ -43,8 +45,6 @@ header {
     color: black;
     font-size: 0.8rem;
     font-weight: 500;
-    padding-bottom: 5px;
-    transition: all 0.2s ease;
 
 }
 
@@ -65,4 +65,121 @@ header {
 .logo a {
     font-size: 1.25rem;
     font-weight: bold;
+}
+
+a:hover, .cart:hover {
+    transition: all 0.2s ease;
+}
+
+
+
+
+
+/* Mobile nav */
+svg {
+    fill: #333;
+    display: none;
+}
+
+svg:hover {
+    fill: orange;
+    cursor: pointer;
+}
+
+.mobileNav {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.7);
+}
+
+.mobileNavInner {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 40%;
+    background:#333;
+}
+
+.mobileNavInner ul {
+    padding:  0 3rem 3rem 3rem;
+}
+
+
+.mobileNavInner a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    padding-top: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid black;
+}
+
+.mobileNavInner a:hover {
+    color: orange;
+}
+
+.mobileNavInner button {
+    background: none;
+    color: orange;
+    font-size: 2rem;
+    font-weight: normal;
+    position: absolute;
+    padding: 1rem;
+    width: 55px;
+    left: 2rem;
+    top: 1rem;
+}
+
+.mobileNavInner button:hover {
+    color: white;
+    border-color: #333;
+}
+
+.linksContainer {
+    margin-top: 6rem;
+}
+
+.cartAndMobileMenu {
+    display: none;
+}
+
+
+
+/* media queries */
+@media only screen and (max-width: 700px) {
+    .mainNav ul {
+        display: none;
+    }
+
+    svg {
+        display: inline;
+    }
+
+    .mainNav .cartAndMobileMenu {
+        display: flex;
+        align-items: center;
+    }
+
+    .mainNav .cartAndMobileMenu li {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0 0 0 1rem;
+    }
+
+    .mainNav .cartAndMobileMenu .cart {
+        margin-right: 1rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .mobileNavInner {
+        width: 100%;
+    }
 }

@@ -63,3 +63,12 @@ button:hover {
   border-color: orange;
   cursor: pointer;
 }
+
+
+/* Media Queries */
+
+@media (max-width: 700px) {
+  .limitedWidth {
+    padding: 10%;
+  }
+}

@@ -7,6 +7,9 @@ export const Register = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [phone, setPhone] = useState("");
 
     const [alert, setAlert] = useState("");
 
@@ -23,7 +26,10 @@ export const Register = () => {
                 },
                 body: JSON.stringify({
                     username: username,
-                    password: password
+                    password: password,
+                    firstName: firstName,
+                    lastName: lastName,
+                    phone: phone
                 })
             }).then(res => {
                 if (res.status === 403) {
@@ -39,22 +45,35 @@ export const Register = () => {
     }
 
     return (
-        <section className={styles.registerContainer} onSubmit={handleSubmit} action="">
-            <form>
-                <label htmlFor="username">Email:</label>
-                <input id="username" type="email" required
-                    onChange={e => setUsername(e.target.value)} />
-                <label htmlFor="password">Password:</label>
-                <input id="password" type="password" required
-                    onChange={e => setPassword(e.target.value)} />
-                <label htmlFor="passwordConfirm">Confirm Password:</label>
-                <input id="passwordConfirm" type="password" required
-                    onChange={e => setPasswordConfirm(e.target.value)} />
-                <button type="submit">Register</button>
-                <p className={styles.alert}>{alert}</p>
-                <p>Already have an account? <Link to="/login">Log in here.</Link></p>
+        <section className={styles.registerContainer}>
+            <form onSubmit={handleSubmit} action="">
+                <div>
+                    <label htmlFor="username">Email:</label>
+                    <input id="username" type="email" required
+                        onChange={e => setUsername(e.target.value)} />
+                    <label htmlFor="password">Password:</label>
+                    <input id="password" type="password" required
+                        onChange={e => setPassword(e.target.value)} />
+                    <label htmlFor="passwordConfirm">Confirm Password:</label>
+                    <input id="passwordConfirm" type="password" required
+                        onChange={e => setPasswordConfirm(e.target.value)} />
+                </div>
+                <div>
+                    <label htmlFor="firstName">First Name:</label>
+                    <input id="firstName" type="text" required
+                        onChange={e => setFirstName(e.target.value)} />
+                    <label htmlFor="lastName">Last Name:</label>
+                    <input id="lastName" type="text" required
+                        onChange={e => setLastName(e.target.value)} />
+                    <label htmlFor="phoneNumber">Phone Number:</label>
+                    <input id="phoneNumber" type="tel" required
+                        onChange={e => setPhone(e.target.value)} />
+                    <button type="submit">Register</button>
+                    <p className={styles.alert}>{alert}</p>
+                    <p>Already have an account? <Link to="/login">Log in here.</Link></p>
+                </div>
             </form>
-            
+
         </section >
     );
 }

@@ -16,7 +16,7 @@ export const Login = () => {
     const history = useHistory();
 
     if (loggedIn) {
-        return <Redirect to="/workout" />;
+        return <Redirect to="/account" />;
     }
 
 

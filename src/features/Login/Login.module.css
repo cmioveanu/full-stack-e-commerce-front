@@ -1,3 +1,7 @@
+.loginContainer {
+    padding: 0;
+}
+
 .loginContainer p {
     color: #333;
     margin-top: 1.2rem;
@@ -14,3 +18,5 @@
 .loginContainer p a:hover {
     border-bottom: 1px solid orange;
 }
+
+

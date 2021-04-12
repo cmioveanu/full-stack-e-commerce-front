@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Header = (props) => {
 
     const logMeOut = async () => {
-        await fetch('http://localhost:8080/account/logout', {
+        await fetch('api/account/logout', {
             credentials: 'include'
         });
         props.setName("");

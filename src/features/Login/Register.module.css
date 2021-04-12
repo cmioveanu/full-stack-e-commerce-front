@@ -1,3 +1,13 @@
+.registerContainer form {
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.registerContainer form div {
+    width: 48%;
+}
+
 .registerContainer p {
     color: #333;
     margin-top: 1.2rem;
@@ -22,3 +32,16 @@
     margin: 0;
 }
 
+
+
+/* Media Queries */
+
+@media (max-width: 630px) {
+    .registerContainer form {
+        flex-wrap: wrap;
+    }
+    
+    .registerContainer form div{
+       width: 100%;
+    }
+}

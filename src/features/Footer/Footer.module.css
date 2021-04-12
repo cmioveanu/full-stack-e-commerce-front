@@ -17,3 +17,14 @@
     font-weight: bold;
 }
 
+
+/* Media Queries*/
+@media (max-width: 630px) {
+    .footer {
+        padding: 10%;
+    }
+    .footer p {
+        width: 100%;
+        margin-top: 0;
+    }
+}

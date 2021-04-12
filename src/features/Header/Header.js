@@ -97,7 +97,7 @@ export const Header = (props) => {
             }
 
             {/* Cart Component */}
-            { showCart ? <Cart /> : null }
+            { showCart ? <Cart toggleCart={toggleCart}/> : null }
         </header>
     );
 };

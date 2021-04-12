@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart, removeAllFromCart } from '../Cart/CartSlice';
 
 
-export const Cart = () => {
+export const Cart = (props) => {
     const dispatch = useDispatch();
 
     const productsInCart = useSelector(state => state.cart.productsInCart);
@@ -13,7 +13,11 @@ export const Cart = () => {
 
     return (
         <section className={styles.cart} id="cart">
-            <p className={styles.productsInCart}>{productsInCart.length} item(s) in your cart</p>
+            <div className={styles.productsInCart}>
+                <p>{productsInCart.length} item(s) in your cart</p>
+                <button onClick={props.toggleCart}>X</button>
+            </div>
+
             <div className={styles.productsContainer}>
                 {
                     productsInCart.map(product => (

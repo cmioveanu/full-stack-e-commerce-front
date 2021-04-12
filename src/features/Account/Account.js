@@ -8,9 +8,7 @@ export const Account = (props) => {
     const [orders, setOrders] = useState([]);
 
     const ordersList = async () => {
-        const orders = await fetch('http://localhost:8080/orders', {
-            credentials: 'include'
-        });
+        const orders = await fetch('http://localhost:8080/orders');
 
         const jsonOrders = await orders.json();
         await props.setName(jsonOrders[0][0].firstName + " " + jsonOrders[0][0].lastName);

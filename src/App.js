@@ -1,20 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
-import { Header } from './components/Header/Header';
-import { Banner } from './components/Banner/Banner';
-import { Bestsellers } from './components/Bestsellers/Bestsellers';
-import { Footer } from './components/Footer/Footer';
-import { Login } from './components/Login/Login';
-import { Account } from './components/Account/Account';
-import { Cart } from './components/Cart/Cart';
+import { Header } from './features/Header/Header';
+import { Banner } from './features/Banner/Banner';
+import { Products } from './features/Products/Products';
+import { Footer } from './features/Footer/Footer';
+import { Login } from './features/Login/Login';
+import { Register } from './features/Login/Register';
+import { Account } from './features/Account/Account';
+import { Cart } from './features/Cart/Cart';
 
 function App() {
 
@@ -28,7 +27,7 @@ function App() {
   //cart methods
   const addToCart = (product) => {
     const productIndex = cart.indexOf(product);
-    if (productIndex == -1) {
+    if (productIndex === -1) {
       product.quantity = 1;
       setCart([...cart, product]);
     }
@@ -67,7 +66,7 @@ function App() {
 
   const showCart = () => {
     const cartContainer = document.querySelector('.cart');
-    cartContainer.style.className == 'isShown'
+    cartContainer.style.className === 'isShown'
       ? cartContainer.style.className = 'isHidden'
       : cartContainer.style.className = 'isSHown';
   }
@@ -130,9 +129,8 @@ function App() {
               }}
             />
 
-            <Bestsellers addToCart={addToCart}
+            <Products addToCart={addToCart}
               addToTotal={addToTotal}
-              productsListUrl="http://localhost:8080/products"
             />
 
             <Banner leftBanner={{
@@ -147,10 +145,19 @@ function App() {
               }}
             />
           </Route>
-          
-          <Route path="/login">
-            <Login />
+
+          <Route exact path="/login">
+            <main className="limitedWidth">
+              <Login />
+            </main>
           </Route>
+
+          <Route exact path="/register">
+            <main className="limitedWidth">
+              <Register />
+            </main>
+          </Route>
+
           <Route path="/account">
             <Account
               name={name}
@@ -160,7 +167,7 @@ function App() {
 
         <Footer />
       </div>
-    </Router>
+    </Router >
   );
 }
 

@@ -1,0 +1,24 @@
+.registerContainer p {
+    color: #333;
+    margin-top: 1.2rem;
+}
+
+.registerContainer p a {
+    color: orange;
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: none;
+    padding: 4px 0;
+}
+
+.registerContainer p a:hover {
+    border-bottom: 1px solid orange;
+}
+
+
+.registerContainer .alert {
+    color: red;
+    font-style: italic;
+    margin: 0;
+}
+

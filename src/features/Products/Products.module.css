@@ -1,0 +1,14 @@
+.bestsellers {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 7% auto;
+    max-width: 1200px;
+}
+
+.product {
+    max-width: 300px;
+}
+
+.product img {
+    width: 100%;
+}

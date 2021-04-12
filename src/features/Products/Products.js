@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './Bestsellers.module.css';
+import styles from './Products.module.css';
 import { useState, useEffect } from 'react';
 
 
-export const Bestsellers = (props) => {
+export const Products = (props) => {
     const [bestsellers, setBestsellers] = useState([]);
 
     const productsList = () => {
-        fetch(props.productsListUrl)
+        fetch('/api/products')
         .then(res => res.text())
         .then(jsonRes => console.log(jsonRes));
     }

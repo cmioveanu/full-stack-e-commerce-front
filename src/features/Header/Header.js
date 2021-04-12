@@ -4,12 +4,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 
 import { logOut } from '../Login/LoginSlice';
+import { Cart } from '../Cart/Cart';
+
 
 export const Header = (props) => {
     const loggedIn = useSelector(state => state.login.loggedIn);
+    const numberOfItems = useSelector(state => state.cart.productsInCart.length);
     const dispatch = useDispatch();
 
     const [menuOpen, setMenuOpen] = useState(false);
+    const [showCart, setShowCart] = useState(false);
 
 
     //log out and redirect to login page
@@ -20,8 +24,15 @@ export const Header = (props) => {
     }
 
 
+    //close mobile menu
     const closeMenu = () => {
         setMenuOpen(false);
+    }
+
+
+    //toggle cart
+    const toggleCart = () => {
+        showCart ? setShowCart(false) : setShowCart(true);
     }
 
 
@@ -42,7 +53,7 @@ export const Header = (props) => {
                             <li><Link to="/login" onClick={handleLogoutClick}>Log out</Link></li>
                     }
                     <li><Link to="/account">Account</Link></li>
-                    <li onClick={props.showHideCart}><span className={styles.cart}>Cart: {props.itemsInCart}</span></li>
+                    <li onClick={toggleCart}><span className={styles.cart}>Cart: {numberOfItems}</span></li>
                 </ul>
 
                 {/* Hamburger menu icon */}
@@ -72,8 +83,8 @@ export const Header = (props) => {
 
                         <div className={styles.linksContainer}>
                             <ul>
-                                <li><Link to="/about">About</Link></li>
-                                <li><Link to="/contact">Contact</Link></li>
+                                <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+                                <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
                                 {
                                     !loggedIn ? <li><Link to="/login" onClick={closeMenu}>Login</Link></li> :
                                         <li><Link to="/login" onClick={handleLogoutClick}>Log out</Link></li>
@@ -84,6 +95,9 @@ export const Header = (props) => {
                     </div>
                 </nav>
             }
+
+            {/* Cart Component */}
+            { showCart ? <Cart /> : null }
         </header>
     );
 };

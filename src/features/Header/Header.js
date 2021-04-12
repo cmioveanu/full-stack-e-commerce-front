@@ -6,10 +6,7 @@ import { Link } from "react-router-dom";
 export const Header = (props) => {
 
     const logMeOut = async () => {
-        await fetch('api/account/logout', {
-            credentials: 'include'
-        });
-        props.setName("");
+        await fetch('api/account/logout');
     }
 
     const loginLogout = props.name ? <li onClick={logMeOut}><Link to="">Log Out</Link></li>
@@ -20,11 +17,14 @@ export const Header = (props) => {
     return (
         <header>
             <nav className={styles.mainNav}>
-                <ul>
-                    <li><Link to="/" className={styles.logo}><span>The Wooden Shop</span></Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                </ul>
+                <div>
+                    <h1 className={styles.logo}><Link to="/">The Wooden Shop</Link></h1>
+                    <ul>
+                        <li><Link to="/"></Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                    </ul>
+                </div>
 
                 <ul>
                     {loginLogout}

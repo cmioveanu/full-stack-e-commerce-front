@@ -1,0 +1,57 @@
+.bannerContainer {
+    display: flex;
+}
+
+.banner {
+    min-height: 700px;
+    width: 50%;
+    background-size: cover;
+    position: relative;
+}
+
+.bannerLeftSunglasses {
+    background-image: url(../../_images/sunglasses1.jpg);
+    background-position: right;
+}
+
+.bannerRightSunglasses {
+    background-image: url(../../_images/sunglasses2.jpg);
+    background-position: center;
+}
+
+.bannerLeftWatch {
+    background-image: url(../../_images/watch1.jpg);
+    background-position: center;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+.bannerRightWatch {
+    background-image: url(../../_images/watch2.jpg);
+    background-position: center;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
+.names {
+    position: absolute;
+    left: 2em;
+    bottom: 2em;
+    color: white;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.names h2 {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 3em;
+}
+
+.names h3 {
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+

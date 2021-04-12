@@ -1,0 +1,55 @@
+header {
+ padding: 0.5% 0;
+ width: 100%;
+ position: fixed;
+ top: 0;
+ z-index: 10;
+ background-color: white;
+}
+
+.mainNav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.mainNav ul {
+    list-style-type: none;
+    padding-right: 2em;
+    padding-left: 2em;
+}
+
+.mainNav ul li {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.mainNav ul li a, span {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    font-size: 0.7em;
+    font-weight: 500;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid white;
+}
+
+.mainNav ul li a:hover {
+    border-color: black;
+}
+
+.cart:hover {
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.mainNav ul li a span {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.logo {
+    margin-right: 3em;
+}

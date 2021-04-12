@@ -1,0 +1,32 @@
+.bestsellers {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 7% auto;
+    max-width: 1200px;
+}
+
+.product {
+    max-width: 300px;
+}
+
+.product img {
+    width: 100%;
+}
+
+button {
+    background: black;
+    border: 1px solid white;
+    color: white;
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: white;
+    border-color: black;
+    color: black;
+    cursor: pointer;
+}

@@ -19,7 +19,7 @@ beforeEach(() => {
 
 
 test('registers new user if username available and passwords match', async () => {
-    const username = screen.getByLabelText('Username:');
+    const username = screen.getByLabelText('Email:');
     const password = screen.getByLabelText('Password:');
     const confirmPassword = screen.getByLabelText('Confirm Password:');
     const registerButton = screen.getByRole('button');
@@ -35,7 +35,7 @@ test('registers new user if username available and passwords match', async () =>
 
 
 test("renders error if passwords don't match", () => {
-    const username = screen.getByLabelText('Username:');
+    const username = screen.getByLabelText('Email:');
     const password = screen.getByLabelText('Password:');
     const confirmPassword = screen.getByLabelText('Confirm Password:');
     const registerButton = screen.getByRole('button');
@@ -51,7 +51,7 @@ test("renders error if passwords don't match", () => {
 
 
 test('renders error if username already exists', async () => {
-    const username = screen.getByLabelText('Username:');
+    const username = screen.getByLabelText('Email:');
     const password = screen.getByLabelText('Password:');
     const confirmPassword = screen.getByLabelText('Confirm Password:');
     const registerButton = screen.getByRole('button');

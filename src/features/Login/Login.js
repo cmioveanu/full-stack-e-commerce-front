@@ -45,7 +45,7 @@ export const Login = () => {
     return (
         <section className={styles.loginContainer}>
             <form onSubmit={handleSubmit} action="">
-                <label htmlFor="username">Username:</label>
+                <label htmlFor="username">Email:</label>
                 <input type="email" name="username" id="username" required
                     onChange={e => setUsername(e.target.value)} />
                 <label htmlFor="password">Password:</label>

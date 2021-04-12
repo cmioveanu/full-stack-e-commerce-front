@@ -19,14 +19,12 @@ test('logs in if username and password valid', async () => {
         </BrowserRouter>
     );
 
-    //if links are not displayed, user is not logged in
-    const beforeWorkoutLink = screen.queryByText('Work out');
-    const beforeExerciseLink = screen.queryByText('Exercises');
-    expect(beforeWorkoutLink).toBeNull();
-    expect(beforeExerciseLink).toBeNull();
+    //if log out link is not displayed, user is not logged in
+    const logOutLink = screen.queryByText('Log out');
+    expect(logOutLink).toBeNull();
 
     //log in
-    const username = screen.getByLabelText('Username:');
+    const username = screen.getByLabelText('Email:');
     const password = screen.getByLabelText('Password:');
     const login = screen.getByRole('button');
 
@@ -34,11 +32,9 @@ test('logs in if username and password valid', async () => {
     fireEvent.change(password, { target: { value: 'TestPassword' } });
     fireEvent.click(login);
 
-    //expecting links to be displayed, because user is now logged in
-    const workoutLink = await screen.findByText('Work out');
-    const exerciseLink = await screen.findByText('Exercises');
-    expect(workoutLink).toBeInTheDocument();
-    expect(exerciseLink).toBeInTheDocument();
+    //expecting log out link to be displayed, because user is now logged in
+    const newLogOut = await screen.findByText('Log out');
+    expect(newLogOut).toBeInTheDocument();
 
     //log back out after testing
     store.dispatch(logOut());

@@ -100,7 +100,7 @@ svg:hover {
     position: absolute;
     right: 0;
     height: 100%;
-    width: 40%;
+    width: 100%;
     background:#333;
 }
 
@@ -175,11 +175,5 @@ svg:hover {
 
     .mainNav .cartAndMobileMenu .cart {
         margin-right: 1rem;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    .mobileNavInner {
-        width: 100%;
     }
 }

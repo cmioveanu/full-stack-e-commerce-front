@@ -1,59 +1,61 @@
 import React from 'react';
 import styles from './Account.module.css';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 
 
-export const Account = (props) => {
+export const Account = () => {
     const [orders, setOrders] = useState([]);
+    const loggedIn = useSelector(state => state.login.loggedIn);
 
-    const ordersList = async () => {
-        const orders = await fetch('http://localhost:8080/orders');
 
-        const jsonOrders = await orders.json();
-        await props.setName(jsonOrders[0][0].firstName + " " + jsonOrders[0][0].lastName);
-        console.log("name is: " + props.name);
-
-        setOrders(jsonOrders);
-
-    }
-
+    //get the list of previous orders
     useEffect(() => {
+        const ordersList = async () => {
+            const orders = await fetch('/api/orders');
+            const jsonOrders = await orders.json();
+
+            setOrders(jsonOrders);
+        }
+
         ordersList();
     }, [])
-
-    const loggedInOrOut = props.name ? `Welcome back, ${props.name}! Your previous orders:` : `Please log in first!`;
-
-    const renderOrders = !props.name ? null : orders.map(order => (
-            <div key={order[0].id} className={styles.individualOrder}>
-                <div className={styles.orderDetails}>
-                    <p>{(order[0].created_at)}</p>
-                    <p>Order # {order[0].order_id} </p>
-                    <p>Order total: £{order[0].totalOrderAmount}</p>
-                </div>
-                {
-                    order.map(product => (
-                        <div className={styles.productDetails} >
-                            <img src={"/_images/" + product.img_thumb_path} />
-                            <div>
-                                <p className={styles.productName}>{product.name}</p>
-                                <p>£{product.unit_price}</p>
-                                <p>Qty: {product.quantity}</p>
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
-        ))
-    
 
 
     return (
         <section className={styles.account}>
             <div className={styles.ordersContainer}>
-                <h2>{loggedInOrOut}</h2>
+                <h2>
+                    {loggedIn ? `Welcome back! Your previous orders:` :
+                        `Please log in first!`}
+                </h2>
+
                 <div className={styles.ordersHistory}>
-                    {renderOrders}
+                    {
+                        /* Map the list of orders for display */
+                        orders.map(order => (
+                            <div key={order[0].id} className={styles.individualOrder}>
+                                <div className={styles.orderDetails}>
+                                    <p>{(order[0].created_at)}</p>
+                                    <p>Order # {order[0].order_id} </p>
+                                    <p>Order total: £{order[0].totalOrderAmount}</p>
+                                </div>
+                                {
+                                    order.map(product => (
+                                        <div className={styles.productDetails} >
+                                            <img src={"/_images/" + product.img_thumb_path} alt={product.name}/>
+                                            <div>
+                                                <p className={styles.productName}>{product.name}</p>
+                                                <p>£{product.unit_price}</p>
+                                                <p>Qty: {product.quantity}</p>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </section>

@@ -1,18 +1,27 @@
-import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { Bestsellers } from './Bestsellers';
+import { Products } from './Products';
 
-test('renders Bestsellers component', () => {
-    render(<Bestsellers />);
+import { Provider } from 'react-redux';
+import store from '../../app/store';
 
-    const bestsellersContainer = document.querySelector('.bestsellers');
-    expect(bestsellersContainer).toBeInTheDocument();
-});
 
-test('renders components correctly', async () => {
-    render(<Bestsellers productsListUrl="/products"/>);
+test('renders heading and products', async () => {
+    render(
+        <Provider store={store}>
+            <Products />
+        </Provider>
+    );
 
-    expect(await screen.findByText("The Utah")).toBeInTheDocument();
-    screen.debug();
+    const heading = screen.getByRole('heading', { level: 2 });
+    expect(heading).toBeInTheDocument();
 
+    const utah = await screen.findByText("The Utah");
+    const iadho = await screen.findByText("The Idaho");
+    const geneva = await screen.findByText("The Geneva");
+    const scandinavia = await screen.findByText("The Scandinavia");
+
+    expect(utah).toBeInTheDocument();
+    expect(iadho).toBeInTheDocument();
+    expect(geneva).toBeInTheDocument();
+    expect(scandinavia).toBeInTheDocument();
 });

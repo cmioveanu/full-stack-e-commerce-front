@@ -6,12 +6,20 @@ import {
     routinesExList,
     routineHistory,
     exerciseHistory,
-    workoutExercises
+    workoutExercises,
+
+    products,
 } from './testData';
 
 
 // Server handlers
 const handlers = [
+    // *** Products route
+    rest.get('/api/products', (req, res, ctx) => {
+        return res(ctx.json(products));
+    }),
+
+
     // *** Workout route
     rest.get('/api/workout/19', (req, res, ctx) => {
         return res(ctx.json(workoutExercises));

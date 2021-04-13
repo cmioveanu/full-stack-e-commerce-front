@@ -1,8 +1,8 @@
 import styles from './Products.module.css';
+import { images } from '../../_images/images';
+
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-
-import { addToCart } from '../Cart/CartSlice';
 
 
 export const Products = () => {
@@ -24,17 +24,23 @@ export const Products = () => {
 
 
     return (
-        <section className={styles.bestsellers}>
-            {
-                products.map(product => (
-                    <div className={styles.product} key={product.id}>
-                        <img src={"/_images/" + product.img_thumb_path} alt={product.name} />
-                        <h2>{product.name}</h2>
-                        <p>£{product.unit_price}</p>
-                        <button onClick={() => dispatch(addToCart(product))}>Add to cart</button>
-                    </div>
-                ))
-            }
+        <section className={styles.productsContainer}>
+            <h2>Our Products:</h2>
+            <div className={styles.products}>
+                {
+                    products.map(product => (
+                        <div className={styles.individualProduct} key={product.id}>
+                            <div>
+                                <img
+                                    src={images[`img${product.id}`]}
+                                    alt={product.name}
+                                />
+                                <h3>{product.name}</h3>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
         </section >
     );
 };

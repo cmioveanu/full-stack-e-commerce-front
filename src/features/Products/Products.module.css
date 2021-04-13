@@ -1,14 +1,57 @@
-.bestsellers {
+.productsContainer {
+    padding: 5% 20px;
+}
+
+.productsContainer h2 {
+    font-size: 2rem;
+    width: 260px;
+    margin: 1.5rem auto;
+    padding: 0.5rem 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.products {
     display: flex;
     flex-wrap: wrap;
-    margin: 7% auto;
-    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.product {
-    max-width: 300px;
+.individualProduct {
+    position: relative;
+    padding: 20px;
+    width: 50%;
+    box-sizing: border-box;
 }
 
-.product img {
-    width: 100%;
+.individualProduct div {
+    background-color: black;
+}
+
+.individualProduct img {
+    max-width: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: all 0.2s ease;
+}
+
+.individualProduct img:hover {
+    max-width: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.individualProduct h3 {
+    position: absolute;
+    left: 45px;
+    bottom: 15px;
+    color: white;
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }

@@ -56,9 +56,9 @@ export const Header = (props) => {
                     <li onClick={toggleCart}><span className={styles.cart}>Cart: {numberOfItems}</span></li>
                 </ul>
 
-                {/* Hamburger menu icon */}
+                {/* Hamburger menu icon and cart button */}
                 <ul className={styles.cartAndMobileMenu}>
-                    <li onClick={props.showHideCart}><span className={styles.cart}>Cart: {props.itemsInCart}</span></li>
+                    <li onClick={toggleCart}><span className={styles.cart}>Cart: {numberOfItems}</span></li>
                     <li>
                         <svg
                             viewBox="0 0 100 80"
@@ -97,7 +97,7 @@ export const Header = (props) => {
             }
 
             {/* Cart Component */}
-            { showCart ? <Cart toggleCart={toggleCart}/> : null }
+            { showCart ? <Cart toggleCart={toggleCart} /> : null}
         </header>
     );
 };

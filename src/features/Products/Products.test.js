@@ -1,15 +1,18 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { Products } from './Products';
-
+import { fireEvent, render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+
+import { Products } from './Products';
 import store from '../../app/store';
 
 
 beforeEach(() => {
     render(
-        <Provider store={store}>
-            <Products />
-        </Provider>
+        <BrowserRouter>
+            <Provider store={store}>
+                <Products />
+            </Provider>
+        </BrowserRouter>
     );
 })
 

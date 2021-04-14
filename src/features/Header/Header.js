@@ -7,7 +7,7 @@ import { logOut } from '../Login/LoginSlice';
 import { Cart } from '../Cart/Cart';
 
 
-export const Header = (props) => {
+export const Header = () => {
     const loggedIn = useSelector(state => state.login.loggedIn);
     const numberOfItems = useSelector(state => state.cart.productsInCart.length);
     const dispatch = useDispatch();

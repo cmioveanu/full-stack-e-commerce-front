@@ -44,8 +44,8 @@ export const Products = () => {
             <div data-testid="product" className={styles.products}>
                 {
                     products.map(product => (
-                        <div className={styles.individualProduct} key={product.id} onClick={() => toggleIndividual(product)}>
-                            <div>
+                        <div className={styles.individualProduct} key={product.id}>
+                            <div onClick={() => toggleIndividual(product)}>
                                 <img
                                     src={images[`img${product.id}`]}
                                     alt={product.name}

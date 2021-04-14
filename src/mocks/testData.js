@@ -34,7 +34,23 @@ export const products = [
 ];
 
 
-
+export const watch = {
+    watches_id: 1,
+    product_id: 1,
+    watches_colour: "dark brown, silver and bronze",
+    movement: "japanese 2035 majoy quartz",
+    waterproof: "yes, 3bar",
+    stopwatch: true,
+    date: true,
+    band_material: "wood",
+    dial_material: "hardlex",
+    dial_diameter: "44mm",
+    case_shape: "round",
+    clasp_type: "folding clasp with safety",
+    band_links: "adjustable",
+    band_length: "22cm",
+    band_width: "23mm"
+}
 
 
 

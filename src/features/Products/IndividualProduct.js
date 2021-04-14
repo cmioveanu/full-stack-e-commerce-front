@@ -82,7 +82,7 @@ export const IndividualProduct = (props) => {
                             :
                             <table>
                                 <tbody>
-                                    <tr><td>colour:</td><td>{details.sunglasses_colour}</td></tr>
+                                    <tr><td>colour:</td><td>{details.watches_colour}</td></tr>
                                     <tr><td>movement:</td><td>{details.movement}</td></tr>
                                     <tr><td>stopwatch:</td><td>{details.stopwatch ? 'yes' : 'no'}</td></tr>
                                     <tr><td>waterproof:</td><td>{details.waterproof}</td></tr>
@@ -90,7 +90,7 @@ export const IndividualProduct = (props) => {
                                     <tr><td>dial diameter:</td><td>{details.dial_diameter}</td></tr>
                                     <tr><td>dial material:</td><td>{details.dial_material}</td></tr>
                                     <tr><td>band material:</td><td>{details.band_material}</td></tr>
-                                    <tr><td>band width:</td><td>{details.band}</td></tr>
+                                    <tr><td>band width:</td><td>{details.band_width}</td></tr>
                                     <tr><td>band links:</td><td>{details.band_links}</td></tr>
                                     <tr><td>clasp type:</td><td>{details.clasp_type}</td></tr>
                                 </tbody>

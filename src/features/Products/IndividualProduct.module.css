@@ -1,0 +1,75 @@
+.container {
+    position: fixed;
+    top: 55px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow: scroll;
+    background-color: white;
+}
+
+.innerContainer {
+    padding: 2.5% 5% 5% 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.innerContainer div {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 5%;
+}
+
+.innerContainer img {
+    max-width: 100%;
+}
+
+.innerContainer h2 {
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+
+.innerContainer h3 {
+    margin-top: 2.5rem;
+}
+
+.innerContainer p {
+    line-height: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+}
+
+.goBack {
+    background: none;
+    border: none;
+    color: orange;
+    width: 120px;
+    padding: 1rem 1rem 1rem 0;
+    letter-spacing: 1px;
+}
+
+.goBack:focus {
+    outline: white;
+}
+
+
+.goBack:hover {
+    background: none;
+    color: #333;
+}
+
+
+/* Table styles */
+.innerContainer table {
+    border-collapse: collapse;
+    text-transform: capitalize;
+    width: 100%
+}
+
+.innerContainer td {
+    border: 1px solid #333;
+    padding: 1rem;
+}

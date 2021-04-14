@@ -2,11 +2,17 @@ import styles from './IndividualProduct.module.css';
 import { images } from '../../_images/images';
 
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Header } from '../Header/Header';
+
+import { toggleOpen } from './ProductsSlice';
+
 import FocusTrap from 'focus-trap-react';
 
 
 export const IndividualProduct = (props) => {
     const [details, setDetails] = useState({});
+    const dispatch = useDispatch();
     const product = props.product;
 
 
@@ -23,16 +29,25 @@ export const IndividualProduct = (props) => {
 
         getProducts();
 
-        //disable background scroll when modal is open
+
+        //disable background scroll when modal is open and add margin
         document.body.style.overflow = 'hidden';
-        return () => document.body.style.overflow = 'unset';
-        
+        document.body.style.marginRight = '14px';
+
+        //remove styles and toggle back to false
+        return () => {
+            document.body.style.overflow = 'unset';
+            document.body.style.marginRight = 'unset';
+            dispatch(toggleOpen());
+        }
+
     }, [product.id, product.type]);
 
 
     return (
         <FocusTrap>
             <section className={styles.container}>
+                <Header />
                 <div className={styles.innerContainer}>
                     <div>
                         <img src={images[`white${product.id}`]} alt="Product photo" />

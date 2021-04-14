@@ -6,7 +6,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 15;
     background-color: rgba(0, 0,0 ,0.7);
 }
 
@@ -33,6 +33,10 @@
     text-decoration: none;
     padding: 10px;
     cursor: pointer;
+}
+
+.innerContainer button:focus {
+    outline: #333;
 }
 
 .removeButton {

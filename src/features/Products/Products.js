@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { IndividualProduct } from './IndividualProduct';
-
+import { toggleOpen } from './ProductsSlice';
 
 export const Products = () => {
     const [products, setProducts] = useState([]);
@@ -33,6 +33,8 @@ export const Products = () => {
         if (currentProduct) {
             setIndividualProduct(currentProduct);
         }
+
+        dispatch(toggleOpen());
     }
 
 
@@ -56,7 +58,7 @@ export const Products = () => {
             </div>
 
             {
-                showIndividual ? <IndividualProduct product={individualProduct} toggle={toggleIndividual}/> : null
+                showIndividual ? <IndividualProduct product={individualProduct} toggle={toggleIndividual} /> : null
             }
 
         </section >

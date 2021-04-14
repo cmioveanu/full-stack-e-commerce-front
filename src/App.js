@@ -40,31 +40,9 @@ const App = () => {
 
         <Switch>
           <Route exact path="/">
-            <Banner leftBanner={{
-              class: 'bannerLeftWatch',
-              category: 'Wooden Watch',
-              name: 'The Geneva'
-            }}
-              rightBanner={{
-                class: 'bannerRightWatch',
-                category: 'Wooden Watch',
-                name: 'The Scandinavia'
-              }}
-            />
+            <Banner />
 
             <Products />
-
-            <Banner leftBanner={{
-              class: 'bannerLeftSunglasses',
-              category: 'Wooden Sunglasses',
-              name: 'The Utah'
-            }}
-              rightBanner={{
-                class: 'bannerRightSunglasses',
-                category: 'Wooden Sunglasses',
-                name: 'The Idaho'
-              }}
-            />
           </Route>
 
           <Route exact path="/login">

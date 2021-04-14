@@ -9,8 +9,8 @@
     padding: 0.5rem 0;
     letter-spacing: 1px;
     text-transform: uppercase;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid orange;
+    border-bottom: 1px solid orange;
 }
 
 .products {
@@ -54,4 +54,25 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: normal;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Mediq Queries */
+
+@media (min-width: 1921px) {
+    .individualProduct {
+        width: 25%;
+    }
+}
+
+@media (max-width: 800px) {
+    .individualProduct h3 {
+    font-size: 2rem;
+    }
+}
+
+@media (max-width: 650px) {
+   .individualProduct {
+       width: 100%;
+   }
 }

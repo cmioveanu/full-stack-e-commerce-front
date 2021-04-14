@@ -157,12 +157,16 @@ svg:hover {
 
 /* media queries */
 @media only screen and (max-width: 730px) {
+    header {
+        padding: 5%;
+    }
+
     .mainNav ul {
         display: none;
     }
 
     svg {
-        display: inline;
+        display: inline-block;
     }
 
     .mainNav .cartAndMobileMenu {
@@ -177,7 +181,17 @@ svg:hover {
         padding: 0 0 0 1rem;
     }
 
-    .mainNav .cartAndMobileMenu .cart {
-        margin-right: 1rem;
+    .logo a {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .mainNav .cartAndMobileMenu {
+        padding: 0;
+    }
+
+    .mainNav .cart {
+        padding-left: 0;
     }
 }

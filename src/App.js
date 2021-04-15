@@ -58,7 +58,9 @@ const App = () => {
           </Route>
 
           <Route path="/account">
-            <Account />
+            <main className="limitedWidth">
+              <Account />
+            </main>
           </Route>
         </Switch>
 

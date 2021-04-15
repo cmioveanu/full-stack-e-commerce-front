@@ -9,6 +9,10 @@ import { dateConverter } from '../../utils/helpers';
 
 export const Account = () => {
     const [orders, setOrders] = useState([]);
+    const [seeOrders, setSeeOrders] = useState(false);
+    const [seeEmail, setSeeEmail] = useState(false);
+    const [seePassword, setSeePassword] = useState(false);
+
     const loggedIn = useSelector(state => state.login.loggedIn);
 
 
@@ -25,45 +29,72 @@ export const Account = () => {
     }, [])
 
 
+    //see orders
+    const openOrders = () => {
+        setSeeEmail(false);
+        setSeePassword(false);
+        setSeeOrders(true);
+    }
+
+
+    //see change email
+    const seeChangeEmail = () => {
+
+    }
+
+
+    //see change password
+    const seeChangePassword = () => {
+
+    }
+
+
     return (
         <section className={styles.account}>
-            <h2>
-                {loggedIn ? `Welcome back!` :
-                    `Please log in first!`}
-            </h2>
-            <p className={styles.editPara}>You can edit your account details or check out your orders history below.</p>
+            <section className={styles.overview}>
+                <h2>
+                    {loggedIn ? `Welcome back!` :
+                        `Please log in first!`}
+                </h2>
+                <p className={styles.editPara}>You can edit your account details or check out your order history below.</p>
 
-            <button>Change your email</button>
-            <button>Change your password</button>
-            <button>See previous orders</button>
+                <button onClick={openOrders}>Order history</button>
+                <button>Change email</button>
+                <button>Change password</button>
+            </section>
 
-            <div className={styles.ordersHistory}>
-                {
-                    /* Map the list of orders for display */
-                    orders.map(order => (
-                        <div key={order[0].order_id + order[0].product_id} className={styles.individualOrder}>
 
-                            <div className={styles.orderDetails}>
-                                <p>Order # {order[0].order_id} </p>
-                                <p>{dateConverter((order[0].created_at))}</p>
-                                <p>Order total: £{order[0].totalOrderAmount}</p>
-                            </div>
+            {  /* Orders Section */
+                !seeOrders ? null :
+                    <section className={styles.ordersHistory}>
+                        {
+                            /* Map the list of orders for display */
+                            orders.map(order => (
+                                <div key={order[0].order_id + order[0].product_id} className={styles.individualOrder}>
 
-                            {
-                                order.map(product => (
-                                    <div key={product.product_id + 'product'} className={styles.productDetails} >
-                                        <img src={images[`img${product.product_id}`]} alt={product.name} />
-                                        <div>
-                                            <p className={styles.productName}>{product.name}</p>
-                                            <p>{product.quantity} x £{product.unit_price}</p>
-                                        </div>
+                                    <div className={styles.orderDetails}>
+                                        <p className={styles.orderId}># {order[0].order_id} </p>
+                                        <p>{dateConverter((order[0].created_at))}</p>
+                                        <p>Total: £{order[0].totalOrderAmount}</p>
                                     </div>
-                                ))
-                            }
-                        </div>
-                    ))
-                }
-            </div>
+
+                                    {
+                                        /* Map the products inside the order */
+                                        order.map(product => (
+                                            <div key={product.product_id + 'product'} className={styles.productDetails} >
+                                                <img src={images[`img${product.product_id}`]} alt={product.name} />
+                                                <div>
+                                                    <p className={styles.productName}>{product.name}</p>
+                                                    <p>{product.quantity} x £{product.unit_price}</p>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            ))
+                        }
+                    </section>
+            }
         </section>
     );
 }

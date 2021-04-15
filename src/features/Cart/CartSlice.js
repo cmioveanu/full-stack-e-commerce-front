@@ -58,7 +58,10 @@ export const CartSlice = createSlice({
 
             //decrement number of items and remove the cost from total cost
             state.numberOfItems--;
-            state.totalCost -= parseFloat(action.payload.unit_price);
+
+            let totalCost = state.totalCost -= parseFloat(action.payload.unit_price);
+            if(totalCost < 0) totalCost = 0;
+            state.totalCost = totalCost;
         },
 
 
@@ -73,7 +76,10 @@ export const CartSlice = createSlice({
 
             //decrease number of items and remove the cost from total cost
             state.numberOfItems -= existingProduct.quantity;
-            state.totalCost -= parseFloat(existingProduct.quantity * existingProduct.unit_price);
+
+            let totalCost = state.totalCost - parseFloat(existingProduct.quantity * existingProduct.unit_price);
+            if(totalCost < 0) totalCost = 0;
+            state.totalCost = totalCost;
 
             //remove the item from the list
             state.productsInCart = state.productsInCart.filter(product => product.id !== action.payload.id);

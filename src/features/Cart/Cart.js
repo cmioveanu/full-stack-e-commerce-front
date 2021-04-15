@@ -11,6 +11,7 @@ export const Cart = (props) => {
     const dispatch = useDispatch();
 
     const productsInCart = useSelector(state => state.cart.productsInCart);
+    const numberOfItems = useSelector(state => state.cart.numberOfItems);
     const totalCost = useSelector(state => state.cart.totalCost);
     const open = useSelector(state => state.products.individualProductOpen);
 
@@ -35,7 +36,7 @@ export const Cart = (props) => {
 
                     {/* items in cart count at the top*/}
                     <div className={styles.productsInCart}>
-                        <p>{productsInCart.length} item(s) in your cart</p>
+                        <p>{numberOfItems} item(s) in your cart</p>
                         <button onClick={props.toggleCart}>X</button>
                     </div>
 

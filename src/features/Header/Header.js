@@ -9,7 +9,7 @@ import { Cart } from '../Cart/Cart';
 
 export const Header = () => {
     const loggedIn = useSelector(state => state.login.loggedIn);
-    const numberOfItems = useSelector(state => state.cart.productsInCart.length);
+    const numberOfItems = useSelector(state => state.cart.numberOfItems);
     const dispatch = useDispatch();
 
     const [menuOpen, setMenuOpen] = useState(false);

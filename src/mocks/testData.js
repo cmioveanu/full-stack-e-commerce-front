@@ -51,3 +51,48 @@ export const watch = {
     band_length: "22cm",
     band_width: "23mm"
 };
+
+
+export const orders = [
+    [
+        {
+            "order_id": 28,
+            "product_id": 1,
+            "quantity": 5,
+            "created_at": "2021-01-13T15:45:38.684Z",
+            "status": "Pending",
+            "name": "The Geneva",
+            "unit_price": "79.99",
+            "totalOrderAmount": "699.92"
+        },
+        {
+            "order_id": 28,
+            "product_id": 2,
+            "quantity": 3,
+            "created_at": "2021-01-13T15:45:38.684Z",
+            "status": "Pending",
+            "name": "The Scandinavia",
+            "unit_price": "99.99"
+        }
+    ],
+    [
+        {
+            "order_id": 27,
+            "product_id": 1,
+            "quantity": 1,
+            "created_at": "2021-01-13T15:42:59.628Z",
+            "status": "Pending",
+            "name": "The Geneva",
+            "unit_price": "79.99",
+            "totalOrderAmount": "279.97"
+        }, {
+            "order_id": 27,
+            "product_id": 2,
+            "quantity": 2,
+            "created_at": "2021-01-13T15:42:59.628Z",
+            "status": "Pending",
+            "name": "The Scandinavia",
+            "unit_price": "99.99"
+        }
+    ]
+];

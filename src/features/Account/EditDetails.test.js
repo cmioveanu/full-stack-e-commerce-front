@@ -2,9 +2,6 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { EditDetails } from './EditDetails';
 
 
-
-
-
 //used in tests for the email changing process
 const emailChecks = (testPass, testEmail, confirmTestEmail) => {
     const password = screen.getByLabelText('Enter your password:');

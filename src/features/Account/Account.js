@@ -1,16 +1,12 @@
 import styles from './Account.module.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
-
-import { images } from '../../_images/images';
-import { dateConverter } from '../../utils/helpers';
 
 import { Orders } from './Orders';
 import { EditDetails } from './EditDetails';
 
 
 export const Account = () => {
-
     const [seeOrders, setSeeOrders] = useState(false);
     const [seeEmail, setSeeEmail] = useState(false);
     const [seePassword, setSeePassword] = useState(false);
@@ -46,8 +42,7 @@ export const Account = () => {
         <section className={styles.account}>
             <section className={styles.overview}>
                 <h2>
-                    {loggedIn ? `Welcome back!` :
-                        `Please log in first!`}
+                    {loggedIn ? 'Welcome back!' : 'Please log in first!'}
                 </h2>
                 <p className={styles.editPara}>You can edit your account details or check out your order history below.</p>
 
@@ -56,16 +51,16 @@ export const Account = () => {
                 <button onClick={openChangePassword}>Change password</button>
             </section>
 
-            {  /* Orders Section */
-                !seeOrders ? null : <Orders />
+            {  /* Orders */
+                seeOrders ? <Orders /> : null
             }
 
-            {  /* Edit Email Section */
-                !seeEmail ? null : <EditDetails type="email" />
+            {  /* Edit Email */
+                seeEmail ? <EditDetails type="email" /> : null
             }
 
-            {   /* Edit Password Section */
-                !seePassword ? null : <EditDetails type="password" />
+            {   /* Edit Password */
+                seePassword ? <EditDetails type="password" /> : null
             }
 
         </section>

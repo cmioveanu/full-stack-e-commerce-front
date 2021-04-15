@@ -9,7 +9,8 @@ import {
     workoutExercises,
 
     products,
-    watch
+    watch,
+    orders
 } from './testData';
 
 
@@ -21,6 +22,11 @@ const handlers = [
     }),
     rest.get('/api/products/watches/1', (req, res, ctx) => {
         return res(ctx.json(watch));
+    }),
+
+    // *** Orders route
+    rest.get('/api/orders', (req, res, ctx) => {
+        return res(ctx.json(orders));
     }),
 
 

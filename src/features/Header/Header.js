@@ -49,15 +49,15 @@ export const Header = () => {
                     </h1>
                     <ul >
                         <li><HashLink
-                            to="#products"
+                            to="/#products"
                             scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                         >Products</HashLink></li>
                         <li><HashLink
-                            to="#about"
+                            to="/#about"
                             scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                         >About</HashLink></li>
                         <li><HashLink
-                            to="#contact"
+                            to="/#contact"
                             scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                         >Contact</HashLink></li>
                     </ul>
@@ -99,8 +99,21 @@ export const Header = () => {
 
                         <div className={styles.linksContainer}>
                             <ul>
-                                <li><Link to="/about" onClick={closeMenu}>About</Link></li>
-                                <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+                                <li><HashLink
+                                    to="/#products"
+                                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                                    onClick={closeMenu}
+                                >Products</HashLink></li>
+                                <li><HashLink
+                                    to="/#about"
+                                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                                    onClick={closeMenu}
+                                >About</HashLink></li>
+                                <li><HashLink
+                                    to="/#contact"
+                                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                                    onClick={closeMenu}
+                                >Contact</HashLink></li>
                                 {
                                     !loggedIn ? <li><Link to="/login" onClick={closeMenu}>Login</Link></li> :
                                         <li><Link to="/login" onClick={handleLogoutClick}>Log out</Link></li>

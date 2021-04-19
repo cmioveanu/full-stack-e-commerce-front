@@ -22,6 +22,7 @@
 .contact textarea {
     display: block;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     margin-top: 0.5rem;
 }
@@ -34,4 +35,13 @@
 .contact p {
     color: orange;
     font-style: italic;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 700px) {
+    .contact {
+        padding: 10% 7.5%;
+    }
 }

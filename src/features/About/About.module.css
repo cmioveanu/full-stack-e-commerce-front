@@ -89,3 +89,11 @@
 .secondGoBack {
     margin-top: 1.5rem;
 }
+
+
+/* Media Queries */
+@media (max-width: 700px) {
+    .about {
+        padding: 10% 7.5%;
+    }
+}

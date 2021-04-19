@@ -16,6 +16,7 @@ import { Login } from './features/Login/Login';
 import { Register } from './features/Login/Register';
 import { Account } from './features/Account/Account';
 import { About } from './features/About/About';
+import { Contact } from './features/Contact/Contact';
 
 //Import action creators
 import { logIn } from './features/Login/LoginSlice';
@@ -44,6 +45,7 @@ const App = () => {
             <Banner />
             <Products />
             <About />
+            <Contact />
           </Route>
 
           <Route exact path="/login">

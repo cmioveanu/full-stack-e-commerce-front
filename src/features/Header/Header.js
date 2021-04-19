@@ -49,16 +49,13 @@ export const Header = () => {
                     </h1>
                     <ul >
                         <li><HashLink
-                            to="/#products"
-                            scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                            smooth to="/#products"
                         >Products</HashLink></li>
                         <li><HashLink
-                            to="/#about"
-                            scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                            smooth to="/#about"
                         >About</HashLink></li>
                         <li><HashLink
-                            to="/#contact"
-                            scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                            smooth to="/#contact"
                         >Contact</HashLink></li>
                     </ul>
                 </div>
@@ -100,18 +97,15 @@ export const Header = () => {
                         <div className={styles.linksContainer}>
                             <ul>
                                 <li><HashLink
-                                    to="/#products"
-                                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                                    smooth to="/#products"
                                     onClick={closeMenu}
                                 >Products</HashLink></li>
                                 <li><HashLink
-                                    to="/#about"
-                                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                                    smooth to="/#about"
                                     onClick={closeMenu}
                                 >About</HashLink></li>
                                 <li><HashLink
-                                    to="/#contact"
-                                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                                    smooth to="/#contact"
                                     onClick={closeMenu}
                                 >Contact</HashLink></li>
                                 {

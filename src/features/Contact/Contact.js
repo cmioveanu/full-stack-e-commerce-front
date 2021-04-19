@@ -33,40 +33,41 @@ export const Contact = () => {
 
 
     return (
-        <section className={styles.contact} id="contact">
-            <h2>Contact Us</h2>
+        <section className={styles.contact}>
+            <a id="contact"></a>
+                <h2>Contact Us</h2>
 
-            <form onSubmit={handleSubmit} method="POST">
-                <label htmlFor="name">Name:</label>
-                <input
-                    type="text"
-                    id="name"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    required
-                />
+                <form onSubmit={handleSubmit} method="POST">
+                    <label htmlFor="name">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        required
+                    />
 
-                <label htmlFor="email">Email:</label>
-                <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    required
-                />
+                    <label htmlFor="email">Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        required
+                    />
 
-                <label htmlFor="message">Message:</label>
-                <textarea
-                    rows="5"
-                    id="message"
-                    value={message}
-                    onChange={e => setMessage(e.target.value)}
-                    required>
-                </textarea>
+                    <label htmlFor="message">Message:</label>
+                    <textarea
+                        rows="5"
+                        id="message"
+                        value={message}
+                        onChange={e => setMessage(e.target.value)}
+                        required>
+                    </textarea>
 
-                <button type="submit">Send</button>
-                <p>{alert}</p>
-            </form>
+                    <button type="submit">Send</button>
+                    <p>{alert}</p>
+                </form>
         </section>
     );
 }

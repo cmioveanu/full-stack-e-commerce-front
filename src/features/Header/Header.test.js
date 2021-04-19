@@ -25,7 +25,7 @@ test('renders logo and correct links', () => {
     const links = screen.getAllByRole('link');
 
     expect(links.length).toBe(6);
-    expect(links[0].getAttribute('href')).toBe('/#banner');
+    expect(links[0].getAttribute('href')).toBe('/');
     expect(links[1].getAttribute('href')).toBe('/#products');
     expect(links[2].getAttribute('href')).toBe('/#about');
     expect(links[3].getAttribute('href')).toBe('/#contact');

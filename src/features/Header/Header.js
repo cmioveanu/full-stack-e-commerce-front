@@ -41,11 +41,25 @@ export const Header = () => {
         <header>
             <nav className={styles.mainNav}>
                 <div>
-                    <h1 className={styles.logo}><HashLink to="#banner">The Wooden Shop</HashLink></h1>
+                    <h1 className={styles.logo}>
+                        <HashLink
+                            to="#"
+                            scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                        >The Wooden Shop</HashLink>
+                    </h1>
                     <ul >
-                        <li><HashLink to="#products">Products</HashLink></li>
-                        <li><HashLink to="#about">About</HashLink></li>
-                        <li><HashLink to="#contact">Contact</HashLink></li>
+                        <li><HashLink
+                            to="#products"
+                            scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                        >Products</HashLink></li>
+                        <li><HashLink
+                            to="#about"
+                            scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                        >About</HashLink></li>
+                        <li><HashLink
+                            to="#contact"
+                            scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
+                        >Contact</HashLink></li>
                     </ul>
                 </div>
 

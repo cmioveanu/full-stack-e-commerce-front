@@ -21,6 +21,10 @@ import { Contact } from './features/Contact/Contact';
 //Import action creators
 import { logIn } from './features/Login/LoginSlice';
 
+//Smooth scroll polyfill
+import smoothscroll from 'smoothscroll-polyfill';
+smoothscroll.polyfill();
+
 
 const App = () => {
   const dispatch = useDispatch();

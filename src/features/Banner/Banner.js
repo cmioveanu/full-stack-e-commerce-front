@@ -5,7 +5,7 @@ import { images } from '../../_images/images';
 export const Banner = () => {
 
     return (
-        <section className={styles.bannerContainer} id="banner">
+        <section className={styles.bannerContainer}>
             <img src={images.banner} alt="Sunglasses on dark background"></img>
             <hgroup>
                 <h2>Stylish. Elegant. Unique.</h2>

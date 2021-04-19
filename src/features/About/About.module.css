@@ -96,4 +96,9 @@
     .about {
         padding: 10% 7.5%;
     }
+
+    .modal {
+        padding: 5%;
+        box-sizing: border-box;
+    }
 }

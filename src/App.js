@@ -15,6 +15,7 @@ import { Footer } from './features/Footer/Footer';
 import { Login } from './features/Login/Login';
 import { Register } from './features/Login/Register';
 import { Account } from './features/Account/Account';
+import { About } from './features/About/About';
 
 //Import action creators
 import { logIn } from './features/Login/LoginSlice';
@@ -41,8 +42,8 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <Banner />
-
             <Products />
+            <About />
           </Route>
 
           <Route exact path="/login">

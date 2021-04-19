@@ -29,6 +29,15 @@ const handlers = [
         return res(ctx.json(orders));
     }),
 
+    // *** Contact route
+    rest.post('/api/contact', (req, res, ctx) => {
+        if(req.body.name === 'Cristian') {
+            return res(ctx.status(200));
+        } else {
+            return res(ctx.status(403));
+        }
+    }),
+
 
     // *** Workout route
     rest.get('/api/workout/19', (req, res, ctx) => {

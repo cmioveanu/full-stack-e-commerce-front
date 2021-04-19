@@ -24,7 +24,7 @@ export const Contact = () => {
             }
         });
 
-        if(sentEmail.status === 200) {
+        if (sentEmail.status === 200) {
             setAlert("Message sent. Thank you!");
         } else {
             setAlert("Message was not sent, try again.");
@@ -38,14 +38,28 @@ export const Contact = () => {
 
             <form onSubmit={handleSubmit} method="POST">
                 <label htmlFor="name">Name:</label>
-                <input type="text" id="name" onChange={e => setName(e.target.value)} />
+                <input
+                    type="text"
+                    id="name"
+                    onChange={e => setName(e.target.value)}
+                    required
+                />
 
                 <label htmlFor="email">Email:</label>
-                <input type="email" id="email" onChange={e => setEmail(e.target.value)} />
-
+                <input
+                    type="email"
+                    id="email"
+                    onChange={e => setEmail(e.target.value)}
+                    required
+                />
 
                 <label htmlFor="message">Message:</label>
-                <textarea rows="5" id="message" onChange={e => setMessage(e.target.value)}></textarea>
+                <textarea
+                    rows="5"
+                    id="message"
+                    onChange={e => setMessage(e.target.value)}
+                    required>
+                </textarea>
 
                 <button type="submit">Send</button>
                 <p>{alert}</p>

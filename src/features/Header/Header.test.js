@@ -24,12 +24,13 @@ test('renders logo and correct links', () => {
 
     const links = screen.getAllByRole('link');
 
-    expect(links.length).toBe(5);
-    expect(links[0].getAttribute('href')).toBe('/');
-    expect(links[1].getAttribute('href')).toBe('/about');
-    expect(links[2].getAttribute('href')).toBe('/contact');
-    expect(links[3].getAttribute('href')).toBe('/login');
-    expect(links[4].getAttribute('href')).toBe('/account');
+    expect(links.length).toBe(6);
+    expect(links[0].getAttribute('href')).toBe('/#banner');
+    expect(links[1].getAttribute('href')).toBe('/#products');
+    expect(links[2].getAttribute('href')).toBe('/#about');
+    expect(links[3].getAttribute('href')).toBe('/#contact');
+    expect(links[4].getAttribute('href')).toBe('/login');
+    expect(links[5].getAttribute('href')).toBe('/account');
 });
 
 
@@ -37,13 +38,13 @@ test('log out link renders and works correctly after login', () => {
     store.dispatch(logIn());
 
     const links = screen.getAllByRole('link');
-    const logOutLink = links[3];
+    const logOutLink = links[4];
     expect(logOutLink.textContent).toBe('Log out');
 
     fireEvent.click(logOutLink);
 
     const newLinks = screen.getAllByRole('link');
-    const loginLink = newLinks[3];
+    const loginLink = newLinks[4];
     expect(loginLink.textContent).toBe('Login');
 });
 

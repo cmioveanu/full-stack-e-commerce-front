@@ -39,7 +39,7 @@ export const Products = () => {
 
 
     return (
-        <section className={styles.productsContainer}>
+        <section className={styles.productsContainer} id="products">
             <h2>Our Products:</h2>
             <div data-testid="product" className={styles.products}>
                 {

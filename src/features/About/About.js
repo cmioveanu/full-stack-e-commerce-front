@@ -28,7 +28,7 @@ export const About = () => {
 
 
     return (
-        <section className={styles.about}>
+        <section className={styles.about} id="about">
             <h2>About us</h2>
             <p className={styles.introPara}>The Wooden Shop is where you can choose high 
             quality, hand crafted timepieces from some of the top bamboo and wood watches 

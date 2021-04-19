@@ -17,11 +17,11 @@ export const Contact = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: {
+            body: JSON.stringify({
                 name: name,
                 email: email,
                 message: message
-            }
+            })
         });
 
         if (sentEmail.status === 200) {
@@ -33,7 +33,7 @@ export const Contact = () => {
 
 
     return (
-        <section className={styles.contact}>
+        <section className={styles.contact} id="contact">
             <h2>Contact Us</h2>
 
             <form onSubmit={handleSubmit} method="POST">
@@ -41,6 +41,7 @@ export const Contact = () => {
                 <input
                     type="text"
                     id="name"
+                    value={name}
                     onChange={e => setName(e.target.value)}
                     required
                 />
@@ -49,6 +50,7 @@ export const Contact = () => {
                 <input
                     type="email"
                     id="email"
+                    value={email}
                     onChange={e => setEmail(e.target.value)}
                     required
                 />
@@ -57,6 +59,7 @@ export const Contact = () => {
                 <textarea
                     rows="5"
                     id="message"
+                    value={message}
                     onChange={e => setMessage(e.target.value)}
                     required>
                 </textarea>

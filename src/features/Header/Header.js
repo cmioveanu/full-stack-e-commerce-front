@@ -2,6 +2,7 @@ import styles from './Header.module.css';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 import { logOut } from '../Login/LoginSlice';
 import { Cart } from '../Cart/Cart';
@@ -40,10 +41,11 @@ export const Header = () => {
         <header>
             <nav className={styles.mainNav}>
                 <div>
-                    <h1 className={styles.logo}><Link to="/">The Wooden Shop</Link></h1>
+                    <h1 className={styles.logo}><HashLink to="#banner">The Wooden Shop</HashLink></h1>
                     <ul >
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                        <li><HashLink to="#products">Products</HashLink></li>
+                        <li><HashLink to="#about">About</HashLink></li>
+                        <li><HashLink to="#contact">Contact</HashLink></li>
                     </ul>
                 </div>
 

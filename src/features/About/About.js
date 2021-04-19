@@ -30,8 +30,9 @@ export const About = () => {
     return (
         <section className={styles.about}>
             <h2>About us</h2>
-            <p className={styles.introPara}>The Wooden Shop is where you can choose high quality, hand crafted timepieces from some of
-                the top bamboo and wood watches brands in the world. </p>
+            <p className={styles.introPara}>The Wooden Shop is where you can choose high 
+            quality, hand crafted timepieces from some of the top bamboo and wood watches 
+            brands in the world.</p>
             <button className={styles.readMore} onClick={openModal}>Read more</button>
 
 

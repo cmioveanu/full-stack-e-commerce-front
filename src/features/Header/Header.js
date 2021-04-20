@@ -39,11 +39,12 @@ export const Header = () => {
 
     return (
         <header>
+            {/* Desktop menu */}
             <nav className={styles.mainNav}>
                 <div>
                     <h1 className={styles.logo}>
                         <HashLink
-                            to="#"
+                            to="/#"
                             scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
                         >The Wooden Shop</HashLink>
                     </h1>

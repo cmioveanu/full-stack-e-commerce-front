@@ -43,12 +43,28 @@ export const Account = () => {
     useEffect(() => {
         const query = new URLSearchParams(window.location.search);
 
+        //if successful, update to paid and remove parameters
         if (query.get('success')) {
             setMessage('Order placed! You will receive an email confirmation.');
+            
+            fetch('/api/orders/paid', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(() => window.location = '/account');
         }
 
+        //if canceled, delete the order and remove parameters
         if (query.get('canceled')) {
             setMessage('Order canceled! -- continue to shop around and checkout when you\'re ready.');
+            
+            fetch('/api/orders/delete', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(() => window.location = '/account');
         };
     }, []);
 

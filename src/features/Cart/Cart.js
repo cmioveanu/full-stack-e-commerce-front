@@ -35,7 +35,6 @@ export const Cart = (props) => {
 
     //Stripe checkout
     const handleStripeCheckout = async () => {
-        const stripe = await stripePromise;
 
         //map the products to the Stripe format
         const products = productsInCart.map(product => {
@@ -51,14 +50,27 @@ export const Cart = (props) => {
             }
         });
 
+        //map the product ids and quantities for inserting into database
+        const productIds = productsInCart.map(product => {
+            return {
+                id: product.id,
+                quantity: product.quantity
+            }
+        })
+
         //create Stripe checkout session and redirect to Stripe
         try {
+            const stripe = await stripePromise;
+
             const response = await fetch('/api/checkout/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(products)
+                body: JSON.stringify({
+                    products: products,
+                    productIds: productIds
+                })
             });
 
             const jsonResponse = await response.json();

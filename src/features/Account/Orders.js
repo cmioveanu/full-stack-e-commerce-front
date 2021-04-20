@@ -30,7 +30,7 @@ export const Orders = () => {
                     <div key={order[0].order_id + order[0].product_id} className={styles.individualOrder}>
 
                         <div className={styles.orderDetails}>
-                            <p className={styles.orderId}># {order[0].order_id} </p>
+                            <p className={styles.orderId}># {order[0].order_id} - {order[0].status}</p>
                             <p>{dateConverter((order[0].created_at))}</p>
                             <p>Total: £{order[0].totalOrderAmount}</p>
                         </div>

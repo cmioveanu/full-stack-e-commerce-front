@@ -1,5 +1,5 @@
 import styles from './Account.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Orders } from './Orders';
@@ -10,6 +10,7 @@ export const Account = () => {
     const [seeOrders, setSeeOrders] = useState(false);
     const [seeEmail, setSeeEmail] = useState(false);
     const [seePassword, setSeePassword] = useState(false);
+    const [message, setMessage] = useState(null);
 
     const loggedIn = useSelector(state => state.login.loggedIn);
 
@@ -38,6 +39,20 @@ export const Account = () => {
     }
 
 
+    //check for params after redirecting from Stripe checkout
+    useEffect(() => {
+        const query = new URLSearchParams(window.location.search);
+
+        if (query.get('success')) {
+            setMessage('Order placed! You will receive an email confirmation.');
+        }
+
+        if (query.get('canceled')) {
+            setMessage('Order canceled! -- continue to shop around and checkout when you\'re ready.');
+        };
+    }, []);
+
+
     return (
         <section className={styles.account}>
             <section className={styles.overview}>
@@ -45,6 +60,8 @@ export const Account = () => {
                     {loggedIn ? 'Welcome back!' : 'Please log in first!'}
                 </h2>
                 <p className={styles.editPara}>You can edit your account details or check out your order history below.</p>
+
+                {!message ? null : <p className={styles.message}>{message}</p>}
 
                 <button onClick={openOrders}>Order history</button>
                 <button onClick={openChangeEmail}>Change email</button>

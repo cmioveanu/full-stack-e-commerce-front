@@ -1,7 +1,6 @@
 import styles from './Account.module.css';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
 import { Orders } from './Orders';
 import { EditDetails } from './EditDetails';

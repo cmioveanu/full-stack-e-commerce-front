@@ -63,7 +63,7 @@ export const Header = () => {
                             smooth to="/#about"
                         >About</HashLink></li>
                         <li><HashLink
-                            smooth to="/#contact"
+                            smooth to="/#contactUs"
                         >Contact</HashLink></li>
                     </ul>
                 </div>
@@ -113,7 +113,7 @@ export const Header = () => {
                                     onClick={closeMenu}
                                 >About</HashLink></li>
                                 <li><HashLink
-                                    smooth to="/#contact"
+                                    smooth to="/#contactUs"
                                     onClick={closeMenu}
                                 >Contact</HashLink></li>
                                 {

@@ -46,28 +46,24 @@ const App = () => {
 
         <Switch>
           <Route exact path="/">
-            <Banner />
-            <Products />
-            <About />
-            <Contact />
+            <main>
+              <Banner />
+              <Products />
+              <About />
+              <Contact />
+            </main>
           </Route>
 
           <Route exact path="/login">
-            <main className="limitedWidth">
-              <Login />
-            </main>
+            <Login />
           </Route>
 
           <Route exact path="/register">
-            <main className="limitedWidth">
-              <Register />
-            </main>
+            <Register />
           </Route>
 
           <Route path="/account">
-            <main className="limitedWidth">
-              <Account />
-            </main>
+            <Account />
           </Route>
         </Switch>
 

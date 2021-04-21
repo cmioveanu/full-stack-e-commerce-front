@@ -49,7 +49,7 @@ export const Login = () => {
 
 
     return (
-        <section className={styles.loginContainer}>
+        <main className={styles.login}>
             <form onSubmit={handleSubmit} action="">
                 <label htmlFor="username">Email:</label>
                 <input type="email" name="username" id="username" required
@@ -60,6 +60,6 @@ export const Login = () => {
                 <button type="submit">Log In</button>
                 <p>Don't have an account? <Link to="/register">Register here.</Link></p>
             </form>
-        </section >
+        </main >
     );
 }

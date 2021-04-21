@@ -1,19 +1,25 @@
-.registerContainer form {
+.register {
+    margin: 55px auto 0 auto;
+    max-width: 1200px;
+    padding: 15% 10%;
+}
+
+.register form {
     max-width: 800px;
     display: flex;
     justify-content: space-between;
 }
 
-.registerContainer form div {
+.register form div {
     width: 48%;
 }
 
-.registerContainer p {
+.register p {
     color: #333;
     margin-top: 1.2rem;
 }
 
-.registerContainer p a {
+.register p a {
     color: orange;
     font-weight: 500;
     font-style: italic;
@@ -21,12 +27,12 @@
     padding: 4px 0;
 }
 
-.registerContainer p a:hover {
+.register p a:hover {
     border-bottom: 1px solid orange;
 }
 
 
-.registerContainer .alert {
+.register .alert {
     color: red;
     font-style: italic;
     margin: 0;
@@ -37,11 +43,11 @@
 /* Media Queries */
 
 @media (max-width: 630px) {
-    .registerContainer form {
+    .register form {
         flex-wrap: wrap;
     }
     
-    .registerContainer form div{
+    .register form div{
        width: 100%;
     }
 }

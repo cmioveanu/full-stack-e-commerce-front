@@ -1,5 +1,7 @@
 .account {
-    margin-top: 55px;
+    margin: 55px auto 0 auto;
+    max-width: 1200px;
+    padding: 5%;
 }
 
 .overview {

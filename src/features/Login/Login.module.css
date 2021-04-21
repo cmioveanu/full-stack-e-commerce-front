@@ -1,13 +1,15 @@
-.loginContainer {
-    padding: 0;
+.login {
+    margin: 55px auto 0 auto;
+    max-width: 1200px;
+    padding: 15% 10%;
 }
 
-.loginContainer p {
+.login p {
     color: #333;
     margin-top: 1.2rem;
 }
 
-.loginContainer p a {
+.login p a {
     color: orange;
     font-weight: 500;
     font-style: italic;
@@ -15,7 +17,7 @@
     padding: 4px 0;
 }
 
-.loginContainer p a:hover {
+.login p a:hover {
     border-bottom: 1px solid orange;
 }
 

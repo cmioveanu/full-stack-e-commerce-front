@@ -51,7 +51,7 @@ export const Register = () => {
     
 
     return (
-        <section className={styles.registerContainer}>
+        <main className={styles.register}>
             <form onSubmit={handleSubmit} action="">
                 <div>
                     <label htmlFor="username">Email:</label>
@@ -80,6 +80,6 @@ export const Register = () => {
                 </div>
             </form>
 
-        </section >
+        </main >
     );
 }

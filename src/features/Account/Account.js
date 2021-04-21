@@ -88,7 +88,7 @@ export const Account = () => {
 
 
     return (
-        <section className={styles.account}>
+        <main className={styles.account}>
             <section className={styles.overview}>
                 <h2>
                     {loggedIn ? 'Welcome back!' : 'Please log in first!'}
@@ -114,6 +114,6 @@ export const Account = () => {
                 seePassword ? <EditDetails type="password" /> : null
             }
 
-        </section>
+        </main>
     );
 }

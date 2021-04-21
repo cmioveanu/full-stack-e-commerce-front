@@ -39,7 +39,7 @@ export const Contact = () => {
 
 
     return (
-        <section className={styles.contact} id="contactUs">
+        <section className={styles.contact} id="contact">
             <h2>Contact Us</h2>
 
             <form onSubmit={handleSubmit} method="POST">

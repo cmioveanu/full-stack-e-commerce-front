@@ -12,10 +12,14 @@ export const Orders = () => {
     //get the list of previous orders
     useEffect(() => {
         const ordersList = async () => {
-            const orders = await fetch('/api/orders');
-            const jsonOrders = await orders.json();
-
-            setOrders(jsonOrders);
+            try {
+                const orders = await fetch('/api/orders');
+                const jsonOrders = await orders.json();
+                setOrders(jsonOrders);
+            }
+            catch (err) {
+                console.error('Unable to fetch orders', err);
+            }
         }
 
         ordersList();

@@ -12,22 +12,28 @@ export const Contact = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const sentEmail = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                message: message
-            })
-        });
+        try {
+            const sentEmail = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message
+                })
+            });
 
-        if (sentEmail.status === 200) {
-            setAlert("Message sent. Thank you!");
-        } else {
-            setAlert("Message was not sent, try again.");
+
+            if (sentEmail.status === 200) {
+                setAlert("Message sent. Thank you!");
+            } else {
+                setAlert("Message was not sent, try again.");
+            }
+        }
+        catch (err) {
+            console.error('Unable to send email message', err);
         }
     }
 
@@ -35,39 +41,39 @@ export const Contact = () => {
     return (
         <section className={styles.contact}>
             <a id="contact"></a>
-                <h2>Contact Us</h2>
+            <h2>Contact Us</h2>
 
-                <form onSubmit={handleSubmit} method="POST">
-                    <label htmlFor="name">Name:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                        required
-                    />
+            <form onSubmit={handleSubmit} method="POST">
+                <label htmlFor="name">Name:</label>
+                <input
+                    type="text"
+                    id="name"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    required
+                />
 
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        required
-                    />
+                <label htmlFor="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    required
+                />
 
-                    <label htmlFor="message">Message:</label>
-                    <textarea
-                        rows="5"
-                        id="message"
-                        value={message}
-                        onChange={e => setMessage(e.target.value)}
-                        required>
-                    </textarea>
+                <label htmlFor="message">Message:</label>
+                <textarea
+                    rows="5"
+                    id="message"
+                    value={message}
+                    onChange={e => setMessage(e.target.value)}
+                    required>
+                </textarea>
 
-                    <button type="submit">Send</button>
-                    <p>{alert}</p>
-                </form>
+                <button type="submit">Send</button>
+                <p>{alert}</p>
+            </form>
         </section>
     );
 }

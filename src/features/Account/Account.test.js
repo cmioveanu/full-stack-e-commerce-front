@@ -29,8 +29,8 @@ test('renders order history', async () => {
     const history = screen.getByText('Order history');
     fireEvent.click(history);
 
-    const idOne = await screen.findByText('# 28');
-    const idTwo = await screen.findByText('# 27');
+    const idOne = await screen.findByText('# 28 - Paid');
+    const idTwo = await screen.findByText('# 27 - Paid');
     const totalOne = await screen.findByText('Total: £699.92');
     const totalTwo = await screen.findByText('Total: £279.97');
     const geneva = await screen.findAllByText('The Geneva');

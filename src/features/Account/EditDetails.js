@@ -14,56 +14,68 @@ export const EditDetails = (props) => {
 
 
     //change email
-    const handleEmailSubmit = (event) => {
+    const handleEmailSubmit = async (event) => {
         event.preventDefault();
 
         if (newEmail === emailConfirm) {
-            fetch('api/account/email', {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json',
-                },
-                body: JSON.stringify({
-                    password: oldPassword,
-                    newEmail: newEmail
-                })
-            }).then(res => {
-                if (res.status === 200) {
+            try {
+                const result = await fetch('api/account/email', {
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        password: oldPassword,
+                        newEmail: newEmail
+                    })
+                });
+
+                if (result.status === 200) {
                     setAlertMessage('Email changed.');
                 }
-                else if (res.status === 403) {
+                else if (result.status === 403) {
                     setAlertMessage('Unable to change email. Please try again!');
                 }
-            });
-        } else {
+            }
+            catch (err) {
+                console.error('Unable to change email', err);
+            }
+        }
+        else {
             setAlertMessage("Emails don't match. Try again!");
         }
     }
 
 
     //change password
-    const handlePasswordSubmit = (event) => {
+    const handlePasswordSubmit = async (event) => {
         event.preventDefault();
 
         if (newPassword === passwordConfirm) {
-            fetch('api/account/password', {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    oldPassword: oldPassword,
-                    newPassword: newPassword
-                })
-            }).then(res => {
-                if (res.status === 200) {
+            try {
+                const result = await fetch('api/account/password', {
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        oldPassword: oldPassword,
+                        newPassword: newPassword
+                    })
+                });
+
+                if (result.status === 200) {
                     setAlertMessage('Password changed.');
                 }
-                else if (res.status === 403) {
+                else if (result.status === 403) {
                     setAlertMessage('Unable to change password. Please try again!');
                 }
-            });
-        } else {
+            }
+            catch (err) {
+                console.error('Unable to change password', err);
+            }
+        }
+        else {
             setAlertMessage("Passwords don't match. Try again!");
         }
     }
@@ -72,7 +84,7 @@ export const EditDetails = (props) => {
     return (
         <section className={styles.editDetailsContainer}>
 
-            {/* If the style is email, render email form. Otherwise render password form */}
+            {/* If the type is email, render email form. Otherwise render password form */}
             { props.type === 'email' ?
                 <form onSubmit={handleEmailSubmit} action="">
                     <label htmlFor="passwordConfirmEmail">Enter your password:</label>

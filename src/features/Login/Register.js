@@ -15,34 +15,40 @@ export const Register = () => {
 
 
     //login and if successful, redirect to workout page
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         if (password === passwordConfirm) {
-            fetch('api/account/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    username: username,
-                    password: password,
-                    firstName: firstName,
-                    lastName: lastName,
-                    phone: phone
-                })
-            }).then(res => {
-                if (res.status === 403) {
+            try {
+                const result = await fetch('api/account/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: username,
+                        password: password,
+                        firstName: firstName,
+                        lastName: lastName,
+                        phone: phone
+                    })
+                });
+
+                if (result.status === 403) {
                     setAlert("Email already exists. Please log in.");
-                } else if (res.status === 201) {
+                } else if (result.status === 201) {
                     setAlert("User created, you can log in now.");
                 }
-            });
+            }
+            catch (err) {
+                console.error('Unable to register new account', err);
+            }
 
         } else {
             setAlert("Password fields don't match. Try again.");
         }
     }
+    
 
     return (
         <section className={styles.registerContainer}>

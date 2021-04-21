@@ -19,8 +19,15 @@ export const Header = () => {
 
     //log out and redirect to login page
     const handleLogoutClick = () => {
-        fetch('api/account/logout');
-        dispatch(logOut());
+        try {
+            fetch('api/account/logout');
+            dispatch(logOut());
+
+        }
+        catch (err) {
+            console.error('Unable to log out', err);
+        }
+
         setMenuOpen(false);
     }
 

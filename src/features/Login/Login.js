@@ -21,24 +21,30 @@ export const Login = () => {
 
 
     //login and if successful, redirect to main page
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
-        fetch('api/account/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                username: username,
-                password: password
-            })
-        }).then(res => {
-            if (res.status === 200) {
+        try {
+            const result = await fetch('api/account/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            });
+
+            if (result.status === 200) {
                 dispatch(logIn());
                 history.push('/');
             }
-        });
+        }
+        catch (err) {
+            console.error('Unable to log in', err);
+        }
+
     }
 
 

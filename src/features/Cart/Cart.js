@@ -126,7 +126,6 @@ export const Cart = (props) => {
 
                 {/* subtotal and checkout */}
                 <div className={styles.checkoutSection}>
-                    <p>FREE SHIPPING ON ALL U.S. ORDERS</p>
                     <p>SUBTOTAL: £{totalCost.toFixed(2)}</p>
                     <button
                         className={styles.checkoutButton}

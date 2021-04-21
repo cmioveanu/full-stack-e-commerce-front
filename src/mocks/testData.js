@@ -60,7 +60,7 @@ export const orders = [
             "product_id": 1,
             "quantity": 5,
             "created_at": "2021-01-13T15:45:38.684Z",
-            "status": "Pending",
+            "status": "Paid",
             "name": "The Geneva",
             "unit_price": "79.99",
             "totalOrderAmount": "699.92"
@@ -70,7 +70,7 @@ export const orders = [
             "product_id": 2,
             "quantity": 3,
             "created_at": "2021-01-13T15:45:38.684Z",
-            "status": "Pending",
+            "status": "Paid",
             "name": "The Scandinavia",
             "unit_price": "99.99"
         }
@@ -81,7 +81,7 @@ export const orders = [
             "product_id": 1,
             "quantity": 1,
             "created_at": "2021-01-13T15:42:59.628Z",
-            "status": "Pending",
+            "status": "Paid",
             "name": "The Geneva",
             "unit_price": "79.99",
             "totalOrderAmount": "279.97"
@@ -90,7 +90,7 @@ export const orders = [
             "product_id": 2,
             "quantity": 2,
             "created_at": "2021-01-13T15:42:59.628Z",
-            "status": "Pending",
+            "status": "Paid",
             "name": "The Scandinavia",
             "unit_price": "99.99"
         }

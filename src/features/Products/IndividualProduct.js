@@ -19,10 +19,14 @@ export const IndividualProduct = (props) => {
         const getProducts = async () => {
             const type = product.type === 'sunglasses' ? 'sunglasses' : 'watches';
 
-            const details = await fetch('api/products/' + type + '/' + product.id);
-            const jsonDetails = await details.json();
-
-            setDetails(jsonDetails);
+            try {
+                const details = await fetch('api/products/' + type + '/' + product.id);
+                const jsonDetails = await details.json();
+                setDetails(jsonDetails);
+            }
+            catch (err) {
+                console.error('Unable to get product details', err);
+            }
         }
 
         getProducts();

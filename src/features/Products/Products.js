@@ -17,10 +17,14 @@ export const Products = () => {
     //get the products list from the database
     useEffect(() => {
         const productsList = async () => {
-            const productsList = await fetch('/api/products');
-            const jsonproductsList = await productsList.json();
-
-            setProducts(jsonproductsList);
+            try {
+                const productsList = await fetch('/api/products');
+                const jsonproductsList = await productsList.json();
+                setProducts(jsonproductsList);
+            }
+            catch (err) {
+                console.error('Unable to get products list', err);
+            }
         }
 
         productsList();

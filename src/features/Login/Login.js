@@ -25,7 +25,7 @@ export const Login = () => {
         event.preventDefault();
 
         try {
-            const result = await fetch('https://full-stack-e-commerce.herokuapp.com/api/account/login', {
+            const result = await fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/account/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

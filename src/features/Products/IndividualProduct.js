@@ -20,7 +20,7 @@ export const IndividualProduct = (props) => {
             const type = product.type === 'sunglasses' ? 'sunglasses' : 'watches';
 
             try {
-                const details = await fetch('https://full-stack-e-commerce.herokuapp.com/api/products/' + type + '/' + product.id);
+                const details = await fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/products/' + type + '/' + product.id);
                 const jsonDetails = await details.json();
                 setDetails(jsonDetails);
             }

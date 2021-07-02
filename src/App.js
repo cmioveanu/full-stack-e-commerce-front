@@ -21,17 +21,13 @@ import { Contact } from './features/Contact/Contact';
 //Import action creators
 import { logIn } from './features/Login/LoginSlice';
 
-//Smooth scroll polyfill
-import smoothscroll from 'smoothscroll-polyfill';
-smoothscroll.polyfill();
-
 
 const App = () => {
   const dispatch = useDispatch();
 
   //if user is logged in on the server, set the state as logged in
   useEffect(() => {
-    fetch('api/account/checkLoginStatus').then(res => {
+    fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/account/checkLoginStatus').then(res => {
       if (res.status === 200 || res.status === 304) {
         dispatch(logIn());
       }

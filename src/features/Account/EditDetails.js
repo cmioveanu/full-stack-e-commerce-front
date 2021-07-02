@@ -19,7 +19,7 @@ export const EditDetails = (props) => {
 
         if (newEmail === emailConfirm) {
             try {
-                const result = await fetch('https://full-stack-e-commerce.herokuapp.com/api/account/email', {
+                const result = await fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/account/email', {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json',
@@ -53,7 +53,7 @@ export const EditDetails = (props) => {
 
         if (newPassword === passwordConfirm) {
             try {
-                const result = await fetch('https://full-stack-e-commerce.herokuapp.com/api/account/password', {
+                const result = await fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/account/password', {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

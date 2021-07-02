@@ -62,7 +62,7 @@ export const Cart = (props) => {
         try {
             const stripe = await stripePromise;
 
-            const response = await fetch('https://full-stack-e-commerce.herokuapp.com/api/checkout/', {
+            const response = await fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/checkout/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

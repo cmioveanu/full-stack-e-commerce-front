@@ -2,7 +2,6 @@ import styles from './Header.module.css';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
 
 import { logOut } from '../Login/LoginSlice';
 import { Cart } from '../Cart/Cart';
@@ -50,21 +49,21 @@ export const Header = () => {
             <nav className={styles.mainNav}>
                 <div>
                     <h1 className={styles.logo}>
-                        <HashLink
-                            to="/#"
+                        <Link
+                            to="/"
                             scroll={(el) => el.scrollIntoView({ behavior: 'smooth' })}
-                        >The Wooden Shop</HashLink>
+                        >The Wooden Shop</Link>
                     </h1>
                     <ul >
-                        <li><HashLink
-                            smooth to="/#products"
-                        >Products</HashLink></li>
-                        <li><HashLink
-                            smooth to="/#about"
-                        >About</HashLink></li>
-                        <li><HashLink
-                            smooth to="/#contact"
-                        >Contact</HashLink></li>
+                        <li><Link
+                            smooth to="/products"
+                        >Products</Link></li>
+                        <li><Link
+                            smooth to="/about"
+                        >About</Link></li>
+                        <li><Link
+                            smooth to="/contact"
+                        >Contact</Link></li>
                     </ul>
                 </div>
 
@@ -104,18 +103,18 @@ export const Header = () => {
 
                         <div className={styles.linksContainer}>
                             <ul>
-                                <li><HashLink
+                                <li><Link
                                     smooth to="/#products"
                                     onClick={closeMenu}
-                                >Products</HashLink></li>
-                                <li><HashLink
+                                >Products</Link></li>
+                                <li><Link
                                     smooth to="/#about"
                                     onClick={closeMenu}
-                                >About</HashLink></li>
-                                <li><HashLink
+                                >About</Link></li>
+                                <li><Link
                                     smooth to="/#contact"
                                     onClick={closeMenu}
-                                >Contact</HashLink></li>
+                                >Contact</Link></li>
                                 {
                                     !loggedIn ? <li><Link to="/login" onClick={closeMenu}>Login</Link></li> :
                                         <li><Link to="/login" onClick={handleLogoutClick}>Log out</Link></li>

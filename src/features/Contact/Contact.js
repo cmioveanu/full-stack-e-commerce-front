@@ -39,8 +39,9 @@ export const Contact = () => {
 
 
     return (
-        <section className={styles.contact} id="contact">
+        <main className={styles.contact}>
             <h2>Contact Us</h2>
+            <p>Send us a message and we'll get back to you within 24h.</p>
 
             <form onSubmit={handleSubmit} method="POST">
                 <label htmlFor="name">Name:</label>
@@ -73,6 +74,6 @@ export const Contact = () => {
                 <button type="submit">Send</button>
                 <p>{alert}</p>
             </form>
-        </section>
+        </main>
     );
 }

@@ -1,13 +1,13 @@
 
 .contact {
-    padding: 5%;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact h2 {
     font-size: 2rem;
     width: 205px;
-    margin: 1.5rem auto;
-    padding: 0.5rem 0;
     letter-spacing: 1px;
     text-transform: uppercase;
     border-top: 1px solid orange;
@@ -19,29 +19,9 @@
     margin-top: 1.5rem;
 }
 
-.contact textarea {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin-top: 0.5rem;
-}
-
-.contact textarea:focus {
-    border: 1px solid orange;
-    outline: none;
-}
-
 .contact p {
     color: orange;
     font-style: italic;
-}
-
-
-
-/* Media Queries */
-@media (max-width: 700px) {
-    .contact {
-        padding: 10% 7.5%;
-    }
+    text-align: center;
+    margin-bottom: 2.5rem;
 }

@@ -1,12 +1,6 @@
-.productsContainer {
-    padding: 5% 20px;
-}
-
 .productsContainer h2 {
     font-size: 2rem;
     width: 260px;
-    margin: 1.5rem auto;
-    padding: 0.5rem 0;
     letter-spacing: 1px;
     text-transform: uppercase;
     border-top: 1px solid orange;

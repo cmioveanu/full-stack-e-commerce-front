@@ -1,104 +1,16 @@
 .about {
-    background-color: #333;
-    padding: 5%;
-    color: white;
+    background-color: white;
+    color:#333;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about h2 {
-    font-size: 2rem;
-    width: 165px;
-    margin: 1.5rem auto;
-    padding: 0.5rem 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-top: 1px solid orange;
-    border-bottom: 1px solid orange;
-}
-
-.introPara {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 2rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.15rem;
-    margin-bottom: 2.5rem;
-    margin-top: 2rem;
-}
-
-.readMore {
-    background-color: none;
-    border: 1px solid white;
-    max-width: 165px;
-    margin: 0 auto;
-    display: block;
-}
-
-
-/* Modal */
-.modal {
-    position: fixed;
-    top: 55px;
-    right: 0;
-    left: 0;
-    bottom: 0;
     width: 100%;
-    z-index:5;
-    background-color: white;
-    color: #333;
-    overflow: scroll;
+    margin-top: 4rem;
 }
 
-.innerContainer {
-    padding: 5%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.innerContainer h2 {
-    width: 100%;
-    margin-top: 3.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.innerContainer p {
-    max-width: 600px;
-    line-height: 2rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.15rem;
-}
-
-.goBack {
-    background: none;
-    border: none;
-    color: orange;
-    width: 120px;
-    padding: 1rem 1rem 1rem 0;
-    letter-spacing: 1px;
-}
-
-.goBack:hover {
-    background: none;
-    color: #333;
-}
-
-.goBack:focus {
-    outline: white;
-}
-
-.secondGoBack {
-    margin-top: 1.5rem;
-}
-
-
-/* Media Queries */
-@media (max-width: 700px) {
-    .about {
-        padding: 10% 7.5%;
-    }
-
-    .modal {
-        padding: 5%;
-        box-sizing: border-box;
-    }
+.about .firstHeader {
+    margin-top: 0;
 }

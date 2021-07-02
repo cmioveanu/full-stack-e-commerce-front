@@ -11,26 +11,34 @@ body {
 
 
 
-
-/* General styles */
-.maxWidth {
+/* General */
+main {
   margin-top: 55px;
-  padding: 5%;
+  padding: 4rem 1rem;
 }
 
-.limitedWidth {
-  margin: 55px auto 0 auto;
-  max-width: 1200px;
-  padding: 5%;
+
+h2 {
+  font-size: 2rem;
+  width: 165px;
+  margin: 0 auto 2rem auto;
+  padding: 0.5rem 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-top: 1px solid orange;
+  border-bottom: 1px solid orange;
 }
+
+p {
+  max-width: 600px;
+  line-height: 2.2rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.15rem;
+}
+
 
 
 /* Forms */
-form {
-  max-width: 350px;
-  margin: 0 auto;
-}
-
 input {
   box-sizing: border-box;
   width: 100%;
@@ -63,6 +71,20 @@ button:hover {
   border-color: orange;
   cursor: pointer;
 }
+
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+}
+
+textarea:focus {
+  border: 1px solid orange;
+  outline: none;
+}
+
 
 
 /* Media Queries */

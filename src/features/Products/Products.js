@@ -43,7 +43,7 @@ export const Products = () => {
 
 
     return (
-        <section className={styles.productsContainer} id="products">
+        <main className={styles.productsContainer}>
             <h2>Our Products:</h2>
             <div data-testid="product" className={styles.products}>
                 {
@@ -65,6 +65,6 @@ export const Products = () => {
                 showIndividual ? <IndividualProduct product={individualProduct} toggle={toggleIndividual} /> : null
             }
 
-        </section >
+        </main >
     );
 };

@@ -46,12 +46,19 @@ const App = () => {
 
         <Switch>
           <Route exact path="/">
-            <main>
               <Banner />
-              <Products />
-              <About />
-              <Contact />
-            </main>
+          </Route>
+
+          <Route exact path="/products">
+            <Products />
+          </Route>
+
+          <Route exact path="/about">
+            <About />
+          </Route>
+
+          <Route eaxt path="/contact">
+            <Contact />
           </Route>
 
           <Route exact path="/login">

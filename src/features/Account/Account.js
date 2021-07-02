@@ -49,7 +49,7 @@ export const Account = () => {
                 setMessage('Order placed! You will receive an email confirmation.');
 
                 try {
-                    await fetch('/api/orders/paid', {
+                    await fetch('https://full-stack-e-commerce.herokuapp.com/api/orders/paid', {
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ export const Account = () => {
                     console.error('Unable to update order status to paid', err);
                 }
 
-                window.location = '/account';
+                window.location = 'https://full-stack-e-commerce.herokuapp.com/account';
             }
 
             //if canceled, delete the order and remove parameters
@@ -68,7 +68,7 @@ export const Account = () => {
                 setMessage('Order canceled! -- continue to shop around and checkout when you\'re ready.');
 
                 try {
-                    await fetch('/api/orders/delete', {
+                    await fetch('https://full-stack-e-commerce.herokuapp.com/api/orders/delete', {
                         method: 'DELETE',
                         headers: {
                             'Content-Type': 'application/json'

@@ -13,7 +13,7 @@ export const Orders = () => {
     useEffect(() => {
         const ordersList = async () => {
             try {
-                const orders = await fetch('/api/orders');
+                const orders = await fetch('https://full-stack-e-commerce.herokuapp.com/api/orders');
                 const jsonOrders = await orders.json();
                 setOrders(jsonOrders);
             }

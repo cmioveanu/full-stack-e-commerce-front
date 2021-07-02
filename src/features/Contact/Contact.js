@@ -13,7 +13,7 @@ export const Contact = () => {
         event.preventDefault();
 
         try {
-            const sentEmail = await fetch('/api/contact', {
+            const sentEmail = await fetch('https://full-stack-e-commerce.herokuapp.com/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

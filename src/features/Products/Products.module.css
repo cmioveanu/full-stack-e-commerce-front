@@ -16,7 +16,7 @@
 .products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -25,6 +25,7 @@
     padding: 20px;
     width: 50%;
     box-sizing: border-box;
+    max-width: 550px;
 }
 
 .individualProduct div {

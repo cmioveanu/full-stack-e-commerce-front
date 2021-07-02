@@ -1,3 +1,8 @@
+.productsContainer {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .productsContainer h2 {
     font-size: 2rem;
     width: 260px;
@@ -54,20 +59,27 @@
 
 /* Mediq Queries */
 
-@media (min-width: 1921px) {
+@media only screen and (min-width: 1921px) {
     .individualProduct {
         width: 25%;
     }
 }
 
-@media (max-width: 800px) {
+@media only screen and (max-width: 800px) {
     .individualProduct h3 {
     font-size: 2rem;
     }
 }
 
-@media (max-width: 650px) {
+@media only screen and (max-width: 650px) {
    .individualProduct {
        width: 100%;
    }
+}
+
+@media only screen and (min-width: 400px) {
+    .productsContainer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

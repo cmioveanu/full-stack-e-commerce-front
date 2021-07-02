@@ -54,7 +54,7 @@
 
 
 /* Media Queries */
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .orderDetails {
         flex-flow: column;
         align-items: flex-start;

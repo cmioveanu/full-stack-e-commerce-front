@@ -24,13 +24,12 @@ test('renders logo and correct links', () => {
 
     const links = screen.getAllByRole('link');
 
-    expect(links.length).toBe(6);
+    expect(links.length).toBe(5);
     expect(links[0].getAttribute('href')).toBe('/');
-    expect(links[1].getAttribute('href')).toBe('/#products');
-    expect(links[2].getAttribute('href')).toBe('/#about');
-    expect(links[3].getAttribute('href')).toBe('/#contact');
+    expect(links[1].getAttribute('href')).toBe('/products');
+    expect(links[2].getAttribute('href')).toBe('/about');
+    expect(links[3].getAttribute('href')).toBe('/contact');
     expect(links[4].getAttribute('href')).toBe('/login');
-    expect(links[5].getAttribute('href')).toBe('/account');
 });
 
 
@@ -54,7 +53,7 @@ test('opens and closes mobile menu', () => {
     fireEvent.click(button);
 
     //two Account links, the regular one, and the one in the modal
-    const accountTexts = screen.getAllByText('Account');
+    const accountTexts = screen.getAllByText('Products');
     expect(accountTexts.length).toBe(2);
 
     const closeButton = screen.getByText('X');

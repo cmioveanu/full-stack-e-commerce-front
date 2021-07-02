@@ -72,7 +72,12 @@ export const Header = () => {
                         !loggedIn ? <li><Link to="/login">Login</Link></li> :
                             <li><Link to="/login" onClick={handleLogoutClick}>Log out</Link></li>
                     }
-                    <li><Link to="/account">Account</Link></li>
+
+                    {
+                        !loggedIn ? null :
+                            <li><Link to="/account">Account</Link></li>
+                    }
+
                     <li onClick={toggleCart}><span className={styles.cart}>Cart: {numberOfItems}</span></li>
                 </ul>
 
@@ -96,7 +101,7 @@ export const Header = () => {
             </nav>
 
             {/* Mobile nav, only displayed for smaller devices */}
-            {   !menuOpen ? null :
+            {!menuOpen ? null :
                 <nav className={styles.mobileNav}>
                     <div className={styles.mobileNavInner}>
                         <button onClick={() => setMenuOpen(false)}>X</button>
@@ -119,7 +124,10 @@ export const Header = () => {
                                     !loggedIn ? <li><Link to="/login" onClick={closeMenu}>Login</Link></li> :
                                         <li><Link to="/login" onClick={handleLogoutClick}>Log out</Link></li>
                                 }
-                                <li><Link to="/account" onClick={closeMenu}>Account</Link></li>
+                                {
+                                    !loggedIn ? null :
+                                        <li><Link to="/account" onClick={closeMenu}>Account</Link></li>
+                                }
                             </ul>
                         </div>
                     </div>
@@ -127,7 +135,7 @@ export const Header = () => {
             }
 
             {/* Cart Component */}
-            { showCart ? <Cart toggleCart={toggleCart} /> : null}
+            {showCart ? <Cart toggleCart={toggleCart} /> : null}
         </header>
     );
 };

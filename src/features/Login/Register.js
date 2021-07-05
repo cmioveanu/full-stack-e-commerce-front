@@ -20,7 +20,7 @@ export const Register = () => {
 
         if (password === passwordConfirm) {
             try {
-                const result = await fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/account/register', {
+                const result = await fetch('api/account/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

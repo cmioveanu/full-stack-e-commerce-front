@@ -27,7 +27,7 @@ const App = () => {
 
   //if user is logged in on the server, set the state as logged in
   useEffect(() => {
-    fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/account/checkLoginStatus').then(res => {
+    fetch('api/account/checkLoginStatus').then(res => {
       if (res.status === 200 || res.status === 304) {
         dispatch(logIn());
       }

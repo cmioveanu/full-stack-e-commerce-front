@@ -49,7 +49,7 @@ export const Account = () => {
                 setMessage('Order placed! You will receive an email confirmation.');
 
                 try {
-                    await fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/orders/paid', {
+                    await fetch('api/orders/paid', {
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ export const Account = () => {
                 setMessage('Order canceled! -- continue to shop around and checkout when you\'re ready.');
 
                 try {
-                    await fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/orders/delete', {
+                    await fetch('api/orders/delete', {
                         method: 'DELETE',
                         headers: {
                             'Content-Type': 'application/json'

@@ -18,7 +18,7 @@ export const Products = () => {
     useEffect(() => {
         const productsList = async () => {
             try {
-                const productsList = await fetch('https://full-stack-e-commerce-backend.herokuapp.com/api/products');
+                const productsList = await fetch('api/products');
                 const jsonproductsList = await productsList.json();
                 setProducts(jsonproductsList);
             }
